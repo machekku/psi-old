@@ -411,9 +411,15 @@ include($$PWD/options/options.pri)
 
 # Plugins
 psi_plugins {
-	HEADERS += $$PWD/pluginmanager.h \
-				$$PWD/psiplugin.h
-	SOURCES += $$PWD/pluginmanager.cpp
+	HEADERS += \
+		$$PWD/pluginmanager.h \
+		$$PWD/pluginhost.h
+	
+	SOURCES += \
+		$$PWD/pluginmanager.cpp \
+		$$PWD/pluginhost.cpp
+	
+	include($$PWD/plugins/plugins.pri)
 }
 
 dbus {
